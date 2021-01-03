@@ -3,3 +3,4 @@ config.py
 images/**
 used/**
 .DS_Store
+init.sh
