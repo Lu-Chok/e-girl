@@ -1,0 +1,1 @@
+mainToken = "mongodb://root:rootpassword@localhost:27017/?authSource=admin"
