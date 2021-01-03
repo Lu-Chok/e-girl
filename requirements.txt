@@ -1,0 +1,2 @@
+aiogram==2.11.2
+pymongo[srv]==3.11.1

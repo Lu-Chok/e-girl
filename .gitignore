@@ -1,0 +1,5 @@
+**.*.pyc
+config.py
+images/**
+used/**
+.DS_Store
