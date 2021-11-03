@@ -1,0 +1,8 @@
+boto3==1.18.1
+requests==2.26.0
+botocore==1.21.1
+pydantic==1.8.2
+fastapi==0.66.0
+uvicorn==0.13.4
+pymongo[srv]==3.11.1
+Pillow==8.4.0

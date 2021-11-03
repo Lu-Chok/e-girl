@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  e-girl-mongo:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    logging:
+      driver: none
+  e-girl-api:
+    build: 
+      context: e_girl_api
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app/api
+    ports:
+      - 9000:9000
+    environment:
+      - 'DB_CONNECTION=mongodb://root:rootpassword@e-girl-mongo:27017/?authSource=admin'
+volumes:
+  mongodb_data_container:

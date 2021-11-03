@@ -1,0 +1,25 @@
+name: ssh pull
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls -a via OPEN SSH Private Key
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd e-girl
+            git pull
+            docker-compose up --build -d
+            screen -ls | grep e-girl | cut -d. -f1 | awk '{print $1}' | xargs kill
+            cd e_girl_bot
+            screen -d -m -S 'e-girl' python3 app.py
+            exit 0
+          host: ${{ secrets.HOST }}
+          user: e-girl
+          key: ${{ secrets.PRIVATE_KEY}}
+          args: "-tt -vvv"

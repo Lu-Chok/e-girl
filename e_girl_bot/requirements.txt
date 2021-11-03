@@ -1,0 +1,4 @@
+pymongo[srv]==3.11.1
+requests==2.26.0
+aiogram==2.11.2
+Pillow==8.4.0
