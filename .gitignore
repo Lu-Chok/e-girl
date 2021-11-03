@@ -1,0 +1,5 @@
+**.*.pyc
+config.py
+.DS_Store
+init.sh
+__pycache__
